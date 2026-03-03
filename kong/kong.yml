@@ -1,0 +1,27 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: item-service
+    url: http://item-service:8081
+    routes:
+      - name: item-route
+        paths:
+          - /items
+        strip_path: false
+
+  - name: order-service
+    url: http://order-service:8082
+    routes:
+      - name: order-route
+        paths:
+          - /orders
+        strip_path: false
+
+  - name: payment-service
+    url: http://payment-service:8083
+    routes:
+      - name: payment-route
+        paths:
+          - /payments
+        strip_path: false
